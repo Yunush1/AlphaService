@@ -1,0 +1,33 @@
+type Query{
+    getUser:[User]
+}
+type Mutation{
+    putUserMetadata(dbUser:DBUser):SuccessMessage
+    updateUser(userId:String,city:String,pin:Int,country:String):SuccessMessage
+}
+
+input DBUser{
+    email:String
+    password:String
+    name:String
+    mobile:String
+}
+
+type SuccessMessage {
+    status:Boolean
+    message:String
+}
+type User{
+    userId:String
+    name:String
+    email:String
+    password:String
+    phone:String
+    address:Address
+}
+type Address{
+    city:String
+    pin :Int
+    state:String
+    country:String
+}
